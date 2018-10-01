@@ -9,13 +9,33 @@
     state: present
   with_items:
     - php-mbstring
+    - php-devel
     - php-opcache
     - php-process
     - php-xml
     - php-gd
     - php-pecl-zip 
 
+- name: Install APCu module & config.
+  copy:
+    src:  "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  with_items:
+    - { src: 'apcu.so',     dest: '/usr/lib64/php/modules/apcu.so' }
+    - { src: '40-apcu.ini', dest: '/etc/php.d/40-apcu.ini' }
+
+- name: Change mode APCu module
+  file:
+    path: '/usr/lib64/php/modules/apcu.so'
+    mode: 0755
+
 - name: Enable PHP-FPM Service.
   systemd:
     name: php-fpm 
     enabled: yes
+
+- name: Restart PHP-FPM Service.
+  systemd:
+    name: php-fpm
+    state: restarted
+    daemon_reload: yes

@@ -4,11 +4,9 @@
   hostname:
     name: HOSTNAME00
 
-## Yum Update
-- name: Yum update.
-  yum:
-    name: '*'
-    state: latest
+## Install Epel Repository
+- name: Yum install epel repository.
+  shell: amazon-linux-extras install epel
 
 ## Install Git Repository
 - name: Yum install git.

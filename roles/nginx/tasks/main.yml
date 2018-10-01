@@ -7,3 +7,9 @@
   systemd:
     name: nginx
     enabled: yes
+
+- name: Restart Nginx Service.
+  systemd:
+    name: nginx
+    state: restarted
+    daemon_reload: yes
