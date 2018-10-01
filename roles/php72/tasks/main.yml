@@ -1,0 +1,21 @@
+---
+## Install & Enable PHP 7.2
+- name: Install PHP 7.2.
+  shell: amazon-linux-extras install php7.2
+
+- name: Install PHP modules.
+  yum:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - php-mbstring
+    - php-opcache
+    - php-process
+    - php-xml
+    - php-gd
+    - php-pecl-zip 
+
+- name: Enable PHP-FPM Service.
+  systemd:
+    name: php-fpm 
+    enabled: yes

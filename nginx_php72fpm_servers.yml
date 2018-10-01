@@ -4,15 +4,18 @@
   roles:
     - common
     - nginx
+    - php72
 
 - hosts: nginx_php72fpm_stg_servers
   become: yes
   roles:
     - common
     - nginx
+    - php72
 
 - hosts: nginx_php72fpm_dev_servers
   become: yes
   roles:
     - common
     - nginx
+    - php72

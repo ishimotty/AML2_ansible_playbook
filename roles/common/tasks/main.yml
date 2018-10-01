@@ -6,11 +6,15 @@
 
 ## Yum Update
 - name: Yum update.
-  yum: name=* state=latest
+  yum:
+    name: '*'
+    state: latest
 
 ## Install Git Repository
 - name: Yum install git.
-  yum: name=git
+  yum:
+    name: git
+    state: latest
 
 ## Change Time Zone
 - name: Set timezone to Asia/Tokyo.
