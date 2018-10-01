@@ -29,6 +29,16 @@
     path: '/usr/lib64/php/modules/apcu.so'
     mode: 0755
 
+- name: Install Composer
+  copy:
+    src:  'composer'
+    dest: '/usr/local/bin/composer'
+
+- name: Change mode Composer
+  file:
+    path: '/usr/local/bin/composer'
+    mode: 0755
+
 - name: Enable PHP-FPM Service.
   systemd:
     name: php-fpm 
