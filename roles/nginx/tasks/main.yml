@@ -1,0 +1,9 @@
+---
+## Install & Enable Nginx
+- name: Install nginx.
+  shell: amazon-linux-extras install nginx1.12
+
+- name: Enable nginx service.
+  systemd:
+    name: nginx
+    enabled: yes
