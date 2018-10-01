@@ -1,2 +1,2 @@
 ---
-- import_playbook: tmp_servers.yml
+- import_playbook: nginx_php72fpm_servers.yml

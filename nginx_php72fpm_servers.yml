@@ -1,0 +1,15 @@
+---
+- hosts: nginx_php72fpm_prd_servers
+  become: yes
+  roles:
+    - common
+
+- hosts: nginx_php72fpm_stg_servers
+  become: yes
+  roles:
+    - common
+
+- hosts: nginx_php72fpm_dev_servers
+  become: yes
+  roles:
+    - common

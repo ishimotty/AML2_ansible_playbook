@@ -1,3 +1,1 @@
-[prd_servers]
-example.com
-192.0.2.1
+[nginx_php72fpm_prd_servers]

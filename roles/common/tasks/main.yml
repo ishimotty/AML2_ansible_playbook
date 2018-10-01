@@ -1,0 +1,18 @@
+---
+## Set Hostname
+- name: Set Hostname
+  hostname:
+    name: HOSTNAME00
+
+## Yum Update
+- name: Yum update.
+  yum: name=* state=latest
+
+## Install Git Repository
+- name: Yum install git.
+  yum: name=git
+
+## Change Time Zone
+- name: Set timezone to Asia/Tokyo.
+  timezone:
+    name: Asia/Tokyo
