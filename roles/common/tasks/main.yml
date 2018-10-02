@@ -2,7 +2,7 @@
 ## Set Hostname
 - name: Set Hostname
   hostname:
-    name: HOSTNAME00
+    name: "{{env}}_{{role}}_{{server_oct3}}_{{server_oct4}}"
 
 ## Yum Update
 - name: Yum update.

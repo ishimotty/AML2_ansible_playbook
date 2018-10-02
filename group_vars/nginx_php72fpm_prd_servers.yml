@@ -1,0 +1,4 @@
+---
+# common vars
+env: prd
+role: web
