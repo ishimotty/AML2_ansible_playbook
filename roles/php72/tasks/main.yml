@@ -39,6 +39,26 @@
     path: '/usr/local/bin/composer'
     mode: 0755
 
+- name: Set php72-fpm configure
+  template:
+    src:  "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  with_items:
+    - { src: "php.ini.j2",        dest: "/etc/php.ini"} 
+    - { src: "10-opcache.ini.j2", dest: "/etc/php.d/10-opcache.ini"} 
+    - { src: "www.conf.j2",       dest: "/etc/php-fpm.d/www.conf"} 
+
+- name: Change owner dir.
+  file: 
+    path:  "{{item.path}}"
+    owner: "{{item.owner}}"
+  with_items:
+    - { path: '/var/log/php-fpm',       owner: 'nginx' }
+    - { path: '/var/lib/php/opcache',   owner: 'nginx' }
+    - { path: '/var/lib/php/session',   owner: 'nginx' }
+    - { path: '/var/lib/php/wsdlcache', owner: 'nginx' }
+    - { path: '/var/lib/php/peclxml',   owner: 'nginx' }
+
 - name: Enable PHP-FPM Service.
   systemd:
     name: php-fpm 
