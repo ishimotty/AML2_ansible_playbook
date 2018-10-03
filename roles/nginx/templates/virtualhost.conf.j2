@@ -1,0 +1,14 @@
+server {
+    listen       80;
+    server_name  {{ server_name_Value }};
+    root         {{ root_Value }};
+    client_max_body_size {{ client_max_body_size_Value }};
+
+    location / {
+    }
+
+    access_log /var/log/nginx/{{ server_name_Value }}_access.log;
+    error_log /var/log/nginx/{{ server_name_Value }}_error.log;
+
+    include /etc/nginx/default.d/*.conf;
+}
