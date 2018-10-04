@@ -14,7 +14,7 @@
     - php-process
     - php-xml
     - php-gd
-    - php-pecl-zip 
+    - php-pecl-zip
 
 - name: Install APCu module & config.
   copy:
@@ -44,12 +44,12 @@
     src:  "{{ item.src }}"
     dest: "{{ item.dest }}"
   with_items:
-    - { src: "php.ini.j2",        dest: "/etc/php.ini"} 
-    - { src: "10-opcache.ini.j2", dest: "/etc/php.d/10-opcache.ini"} 
-    - { src: "www.conf.j2",       dest: "/etc/php-fpm.d/www.conf"} 
+    - { src: "php.ini.j2",        dest: "/etc/php.ini"}
+    - { src: "10-opcache.ini.j2", dest: "/etc/php.d/10-opcache.ini"}
+    - { src: "www.conf.j2",       dest: "/etc/php-fpm.d/www.conf"}
 
 - name: Change owner dir.
-  file: 
+  file:
     path:  "{{item.path}}"
     owner: "{{item.owner}}"
   with_items:
@@ -61,7 +61,7 @@
 
 - name: Enable PHP-FPM Service.
   systemd:
-    name: php-fpm 
+    name: php-fpm.service
     enabled: yes
 
 - name: Restart PHP-FPM Service.

@@ -13,7 +13,7 @@
 
 - name: Enable zabbix-agent service.
   systemd:
-    name: zabbix-agent
+    name: zabbix-agent.service
     enabled: yes
 
 - name: Build configure zabbix-agent.

@@ -5,7 +5,7 @@
 
 - name: Enable nginx service.
   systemd:
-    name: nginx
+    name: nginx.service
     enabled: yes
 
 - name: Set nginx configure
@@ -13,10 +13,10 @@
     src:  "{{ item.src }}"
     dest: "{{ item.dest }}"
   with_items:
-    - { src: "nginx.conf.j2",       dest: "/etc/nginx/nginx.conf"} 
-    - { src: "fastcgi.conf.j2",     dest: "/etc/nginx/fastcgi.conf"} 
-    - { src: "php.conf.j2",         dest: "/etc/nginx/default.d/php.conf"} 
-    - { src: "virtualhost.conf.j2", dest: "/etc/nginx/conf.d/virtualhost.conf"} 
+    - { src: "nginx.conf.j2",       dest: "/etc/nginx/nginx.conf"}
+    - { src: "fastcgi.conf.j2",     dest: "/etc/nginx/fastcgi.conf"}
+    - { src: "php.conf.j2",         dest: "/etc/nginx/default.d/php.conf"}
+    - { src: "virtualhost.conf.j2", dest: "/etc/nginx/conf.d/virtualhost.conf"}
 
 - name: Restart Nginx Service.
   systemd:
