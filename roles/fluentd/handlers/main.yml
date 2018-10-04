@@ -1,6 +1,6 @@
 ---
 ## Restart td-agent
 - name: Restart td-agent
-  service:
+  systemd:
     name: td-agent
     state: restarted
