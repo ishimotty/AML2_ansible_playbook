@@ -2,3 +2,30 @@
 # common vars
 env: prd
 role: web
+
+## nginx vars
+# nginx.conf(events section)
+worker_connections_Value: "2048"
+set_real_ip_from_Value: "172.30.0.0/16"
+
+# nginx.conf(server section)
+server_name_Value:          "dev.example.com"
+root_Value:                 "/usr/share/ngin/html"
+client_max_body_size_Value: "50M"
+
+## php vars
+#  php.ini vars
+realpath_cache_size_Value: "4096k"
+realpath_cache_ttl_Value:  "3600"
+max_execution_time_Value:  "360"
+memory_limit_Value:        "128M"
+post_max_size_Value:       "40M"
+upload_max_filesize_Value: "40M"
+date_timezone_Value:       "Asia/Tokyo"
+
+# www.conf vars
+user_Value:   "nginx"
+group_Value:  "nginx"
+pm_all_Value: "200"
+pm_max_requests_Value: "100000"
+php_admin_value_memory_limit_Value: "10GB"
