@@ -23,4 +23,4 @@
 ## Change Time Zone
 - name: Set timezone to Asia/Tokyo.
   timezone:
-    name: Asia/Tokyo
+    name: {{ timezone }}
