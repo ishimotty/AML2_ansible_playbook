@@ -5,6 +5,7 @@
     - common
     - nginx
     - php72
+    - zabbix_agent
 
 - hosts: nginx_php72fpm_stg_servers
   become: yes
@@ -12,6 +13,7 @@
     - common
     - nginx
     - php72
+    - zabbix_agent
 
 - hosts: nginx_php72fpm_dev_servers
   become: yes
@@ -19,3 +21,4 @@
     - common
     - nginx
     - php72
+    - zabbix_agent
