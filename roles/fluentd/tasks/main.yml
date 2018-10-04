@@ -1,0 +1,20 @@
+---
+## Install & Enable Fluentd(td-agent)
+- name: Install td-agent repository & Install td-agent.
+  shell: curl -L https://toolbelt.treasuredata.com/sh/install-amazon2-td-agent3.sh | sh
+
+- name: Add to chkconfig
+  shell: /sbin/chkconfig --add td-agent
+
+- name: Enable td-agent service.
+  systemd:
+    name: td-agent
+    enabled: yes
+
+# - name: Build configure zabbix-agent.
+#   ## /etc/zabbix/
+#   template:
+#     src: td-agent.conf.j2
+#     dest: /etc/td-agent/td-agent.conf
+#   ## Reload configure
+#   notify: Restart td-agent

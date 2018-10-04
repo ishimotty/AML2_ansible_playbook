@@ -1,0 +1,6 @@
+---
+## Restart td-agent
+- name: Restart td-agent
+  service:
+    name: td-agent
+    state: restarted
