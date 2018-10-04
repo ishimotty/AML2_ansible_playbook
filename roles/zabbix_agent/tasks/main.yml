@@ -15,3 +15,11 @@
   systemd:
     name: zabbix-agent
     enabled: yes
+
+- name: Build configure zabbix-agent.
+  ## /etc/zabbix/
+  template:
+    src: zabbix_agentd.conf.j2
+    dest: /etc/zabbix/zabbix_agentd.conf
+  ## Reload configure
+  notify: Restart zabbix-agent
