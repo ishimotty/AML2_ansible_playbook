@@ -24,3 +24,5 @@
 - name: Set timezone to Asia/Tokyo.
   timezone:
     name: "{{ timezone }}"
+
+## Add Configure Logrotate (*option)
