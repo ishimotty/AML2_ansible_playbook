@@ -3,8 +3,8 @@
   become: yes
   roles:
     - common
-    - nginx
     - php72
+    - nginx
     - zabbix_agent
     - fluentd
 
@@ -12,8 +12,8 @@
   become: yes
   roles:
     - common
-    - nginx
     - php72
+    - nginx
     - zabbix_agent
     - fluentd
 
@@ -21,7 +21,7 @@
   become: yes
   roles:
     - common
-    - nginx
     - php72
+    - nginx
     - zabbix_agent
     - fluentd
