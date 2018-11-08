@@ -83,3 +83,19 @@ $ ansible-playbook -i 02_staging site.yml
 $ ansible-playbook -i 03_development site.yml --syntax-check
 $ ansible-playbook -i 03_development site.yml
 ```
+
+# Sample PlayBook
+```
+# Yum installの実行
+- name: Yum install [パッケージ名].
+  yum:
+    name: [パッケージ名]
+    state: latest
+
+# Yum updateの実行
+- name: Yum update.
+  yum:
+    name: '*'
+    state: latest
+
+```
