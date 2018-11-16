@@ -1,18 +1,18 @@
-# Welcome to ansible_template.d
+# Welcome to AmazonLinux2_ansible_playbook
 
-# What's ansible_template.d
-ansibleの公式ドキュメントを元にしたディレクトリテンプレートです。
+# What's AmazonLinux2_ansible_playbook
+ディレクトリテンプレートを元にしたAmazonLinux2用のプレイブック集です。
 > https://docs.ansible.com/ansible/latest/user_guide/playbooks_best_practices.html
 
 # Getting Started
 1. ディレクトリ構成をgit cloneしローカル環境に配置します。
 ```
-$ git clone https://github.com/ishimotty/ansible_template.d.git
+$ git clone https://github.com/ishimotty/AmazonLinux2_ansible_playbook.git
 ``` 
 
 2. 新規にgitリポジトリとして管理するために既存のgit情報を削除します。
 ```
-$ cd ansible_template.d
+$ cd https://github.com/ishimotty/AmazonLinux2_ansible_playbook
 $ rm -rf .git
 ```
 
